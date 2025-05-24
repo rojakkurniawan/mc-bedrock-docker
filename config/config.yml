@@ -1,0 +1,16 @@
+containers:
+  bedrock:
+    - name: minecraft_bedrock
+      ssh: bedrock:2222
+      passwordFile: /bedrock_sainus/.remote-console.yaml
+      worlds:
+        - /bedrock_sainus/worlds/sainus
+
+schedule:
+  startupDelay: 1m
+  interval: 1h
+
+trim:
+  trimDays: 2
+  keepDays: 14
+  minKeep: 2

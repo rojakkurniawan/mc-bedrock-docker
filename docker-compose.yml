@@ -1,0 +1,39 @@
+services:
+  bedrock:
+    image: itzg/minecraft-bedrock-server
+    container_name: minecraft_bedrock
+    expose:
+      - 2222
+    environment:
+      ENABLE_SSH: "TRUE"
+      OPS: "2535466166942745"
+      ALLOW_CHEATS: "true"
+      ENABLE_LAN_VISIBILITY: "true"
+      EULA: "TRUE"
+      GAMEMODE: survival
+      LEVEL_SEED: "-410779989"
+      LEVEL_NAME: "sainus"
+      DIFFICULTY: hard
+      SERVER_NAME: "Sainus Bedrock"
+      VERSION: "LATEST"
+      TZ: "Asia/Jakarta"
+    ports:
+      - "19132:19132/udp"
+    volumes:
+      - ./bedrock/sainus:/data
+    stdin_open: true
+    tty: true
+    restart: always
+
+  backup:
+    image: kaiede/minecraft-bedrock-backup
+    depends_on:
+      - "bedrock"
+    container_name: minecraft-bedrock-backup
+    volumes:
+      - ./config:/config
+      - ./bedrock/sainus:/bedrock_sainus
+      - ./backups:/data
+    environment:
+      TZ: "Asia/Jakarta"
+    restart: always
