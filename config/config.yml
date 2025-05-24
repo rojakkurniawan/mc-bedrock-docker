@@ -6,6 +6,11 @@ containers:
       worlds:
         - /bedrock_sainus/worlds/sainus
 
+trim:
+  trimDays: 2
+  keepDays: 7
+  minKeep: 2
+
 schedule:
   startupDelay: 1m
   interval: 2h
@@ -18,8 +23,3 @@ schedule:
   onLastLogout: true
   # Limit backups to maximum once per 5 minutes
   minInterval: 5min
-
-trim:
-  trimDays: 2
-  keepDays: 14
-  minKeep: 2

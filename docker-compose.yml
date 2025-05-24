@@ -10,6 +10,7 @@ services:
       ALLOW_CHEATS: "true"
       ENABLE_LAN_VISIBILITY: "true"
       EULA: "TRUE"
+      VIEW_DISTANCE: "64"
       GAMEMODE: survival
       LEVEL_SEED: "-410779989"
       LEVEL_NAME: "sainus"
