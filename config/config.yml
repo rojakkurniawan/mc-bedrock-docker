@@ -8,7 +8,16 @@ containers:
 
 schedule:
   startupDelay: 1m
-  interval: 1h
+  interval: 2h
+
+  # Whenever a player logs in.
+  onPlayerLogin: true
+  # Whenever a player logs out.
+  onPlayerLogout: true
+  # Whenever the last player logs out
+  onLastLogout: true
+  # Limit backups to maximum once per 5 minutes
+  minInterval: 5min
 
 trim:
   trimDays: 2
